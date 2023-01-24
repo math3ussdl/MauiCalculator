@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiCalculator.Shared.Calculator"
+             x:DataType="ContentView">
+
+    <VerticalStackLayout Margin="0,80,0,0" HorizontalOptions="End">
+        <Label
+            x:Name="operation"
+            FontSize="36"
+            WidthRequest="350"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="End"
+            Margin="0,0,0,14" />
+
+        <Label
+            x:Name="result"
+            IsVisible="False"
+            FontSize="36"
+            WidthRequest="350"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="End" />
+
+        <Frame
+            BackgroundColor="{DynamicResource ThemeSwitcherColor}"
+            BorderColor="Transparent"
+            WidthRequest="400" HeightRequest="570"></Frame>
+    </VerticalStackLayout>
+</ContentView>

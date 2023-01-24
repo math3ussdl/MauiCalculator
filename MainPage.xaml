@@ -5,10 +5,11 @@
              x:DataType="ContentPage"
              x:Class="MauiCalculator.MainPage"
              x:Name="page"
-             BackgroundColor="{StaticResource Background}"
+             BackgroundColor="{DynamicResource Background}"
              Shell.NavBarIsVisible="False">
 
     <VerticalStackLayout HorizontalOptions="CenterAndExpand" Padding="24">
         <shared:ThemeSwitcher x:Name="themeSwitcher" />
+        <shared:Calculator />
     </VerticalStackLayout>
 </ContentPage>
