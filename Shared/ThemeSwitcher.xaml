@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:MauiCalculator.Helpers"
+             x:Class="MauiCalculator.Shared.ThemeSwitcher"
+             x:DataType="ContentView">
+
+    <Frame
+            x:Name="themeSwitcher"
+            HorizontalOptions="Center"
+            WidthRequest="94"
+            HeightRequest="36"
+            BackgroundColor="{StaticResource ThemeSwitcherColor}"
+            BorderColor="Transparent">
+
+        <HorizontalStackLayout
+                WidthRequest="94"
+                HeightRequest="36">
+
+            <Button
+                    x:Name="lightBtn"
+                    WidthRequest="47"
+                    HeightRequest="36"
+                    CornerRadius="0">
+
+                <Button.ImageSource>
+                    <FontImageSource
+                            x:Name="sunnyIcon"
+                            FontFamily="Ionicons"
+                            Glyph="{Static helpers:Ionicons.MdSunny}"
+                            Color="{StaticResource Yellow100Accent}"
+                            Size="16" />
+                </Button.ImageSource>
+            </Button>
+
+            <Button
+                    x:Name="darkBtn"
+                    WidthRequest="47"
+                    HeightRequest="36"
+                    CornerRadius="0"
+                    BackgroundColor="Transparent">
+
+                <Button.ImageSource>
+                    <FontImageSource
+                            x:Name="moonIcon"
+                            FontFamily="Ionicons"
+                            Glyph="{Static helpers:Ionicons.MdMoon}"
+                            Color="{StaticResource Blue100Accent}"
+                            Size="16" />
+                </Button.ImageSource>
+            </Button>
+        </HorizontalStackLayout>
+    </Frame>
+</ContentView>
