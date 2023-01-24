@@ -22,7 +22,7 @@
             HorizontalTextAlignment="End" />
 
         <Frame
-            BackgroundColor="{DynamicResource ThemeSwitcherColor}"
+            BackgroundColor="{DynamicResource ToolsBackground}"
             BorderColor="Transparent"
             WidthRequest="400" HeightRequest="570"></Frame>
     </VerticalStackLayout>

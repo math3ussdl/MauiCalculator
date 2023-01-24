@@ -7,4 +7,7 @@
     <Color x:Key="ToolsBackground">#2A2D37</Color>
 
     <Color x:Key="Foreground">#CED1D3</Color>
+
+	<Color x:Key="Sunny">#6F7079</Color>
+	<Color x:Key="Moon">#FFFFFF</Color>
 </ResourceDictionary>

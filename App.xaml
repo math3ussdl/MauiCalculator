@@ -4,15 +4,15 @@
              xmlns:local="clr-namespace:MauiCalculator"
              x:Class="MauiCalculator.App">
 
-    <Application.Resources>
-        <ResourceDictionary>
-            <Style TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="{DynamicResource ToolsBackground}" />
-            </Style>
+	<Application.Resources>
+		<ResourceDictionary>
+			<Style TargetType="Frame">
+				<Setter Property="BackgroundColor" Value="{DynamicResource ToolsBackground}" />
+			</Style>
 
-            <Style TargetType="Label">
-                <Setter Property="TextColor" Value="{DynamicResource Foreground}" />
-            </Style>
-        </ResourceDictionary>
-    </Application.Resources>
+			<Style TargetType="Label">
+				<Setter Property="TextColor" Value="{DynamicResource Foreground}" />
+			</Style>
+		</ResourceDictionary>
+	</Application.Resources>
 </Application>

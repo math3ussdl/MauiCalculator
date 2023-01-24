@@ -1,35 +1,28 @@
+using MauiCalculator.Resources.Styles;
+
 namespace MauiCalculator.Shared;
 
 public partial class ThemeSwitcher : ContentView {
 
-	public ContentPage Page;
-
-	public string Theme = "Light";
-
 	public ThemeSwitcher() {
 		InitializeComponent();
-
-		lightBtn.BackgroundColor = Color.FromRgba(255, 255, 255, 0.5);
 
 		lightBtn.Clicked += (object s, EventArgs e) => ToggleTheme("Light");
 		darkBtn.Clicked += (object s, EventArgs e) => ToggleTheme("Dark");
 	}
 
-	private void ToggleTheme(string theme) {
-		Theme = theme;
+	private static void ToggleTheme(string theme) {
+		var mergedDicts = Application.Current.Resources.MergedDictionaries;
 
-		if (theme == "Light") {
-			Page.BackgroundColor = (Color)App.ResourceDictionary["Colors"]["Background"];
-			themeSwitcher.BackgroundColor = (Color)App.ResourceDictionary["Colors"]["ThemeSwitcherColor"];
+		if (mergedDicts is not null) {
+			mergedDicts.Clear();
 
-			lightBtn.BackgroundColor = Color.FromRgba(255, 255, 255, 0.5);
-			darkBtn.BackgroundColor = Colors.Transparent;
-		} else {
-			Page.BackgroundColor = (Color)App.ResourceDictionary["Colors"]["BackgroundDark"];
-			themeSwitcher.BackgroundColor = (Color)App.ResourceDictionary["Colors"]["ThemeSwitcherColorDark"];
-
-			darkBtn.BackgroundColor = Color.FromRgba(255, 255, 255, 0.5);
-			lightBtn.BackgroundColor = Colors.Transparent;
+			if (theme == "Light") {
+				mergedDicts.Add(new Light());
+			}
+			else {
+				mergedDicts.Add(new Dark());
+			}
 		}
 	}
 }

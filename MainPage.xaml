@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:shared="clr-namespace:MauiCalculator.Shared"
-             x:DataType="ContentPage"
-             x:Class="MauiCalculator.MainPage"
-             x:Name="page"
-             BackgroundColor="{DynamicResource Background}"
-             Shell.NavBarIsVisible="False">
+<ContentPage
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:shared="clr-namespace:MauiCalculator.Shared"
+  x:DataType="ContentPage"
+  x:Class="MauiCalculator.MainPage"
+	BackgroundColor="{DynamicResource Background}"
+  Shell.NavBarIsVisible="False">
 
-    <VerticalStackLayout HorizontalOptions="CenterAndExpand" Padding="24">
-        <shared:ThemeSwitcher x:Name="themeSwitcher" />
-        <shared:Calculator />
-    </VerticalStackLayout>
+	<VerticalStackLayout HorizontalOptions="CenterAndExpand" Padding="24">
+		<shared:ThemeSwitcher />
+		<shared:Calculator />
+	</VerticalStackLayout>
 </ContentPage>
