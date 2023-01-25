@@ -1,29 +1,106 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiCalculator.Shared.Calculator"
-             x:DataType="ContentView">
+<ContentView
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:helpers="clr-namespace:MauiCalculator.Helpers"
+  x:Class="MauiCalculator.Shared.Calculator"
+  x:DataType="ContentView">
 
-    <VerticalStackLayout Margin="0,80,0,0" HorizontalOptions="End">
-        <Label
-            x:Name="operation"
-            FontSize="36"
-            WidthRequest="350"
-            HorizontalOptions="Center"
-            HorizontalTextAlignment="End"
-            Margin="0,0,0,14" />
+	<ContentView.Resources>
+		<Style TargetType="Button">
+			<Setter Property="BackgroundColor" Value="{DynamicResource CalculatorButtonBackground}" />
+			<Setter Property="FontSize" Value="18" />
+			<Setter Property="TextColor" Value="{DynamicResource Foreground}" />
+			<Setter Property="WidthRequest" Value="64" />
+			<Setter Property="HeightRequest" Value="64" />
+			<Setter Property="FontAttributes" Value="Bold" />
+		</Style>
+	</ContentView.Resources>
 
-        <Label
-            x:Name="result"
-            IsVisible="False"
-            FontSize="36"
-            WidthRequest="350"
-            HorizontalOptions="Center"
-            HorizontalTextAlignment="End" />
+	<VerticalStackLayout
+		Margin="0,80,0,0"
+		HorizontalOptions="End">
 
-        <Frame
-            BackgroundColor="{DynamicResource ToolsBackground}"
-            BorderColor="Transparent"
-            WidthRequest="400" HeightRequest="570"></Frame>
-    </VerticalStackLayout>
+		<Label
+      x:Name="operation"
+      FontSize="36"
+      WidthRequest="350"
+      HorizontalOptions="Center"
+      HorizontalTextAlignment="End"
+      Margin="0,0,0,14"
+			Text="0" />
+
+		<Label
+      x:Name="result"
+      IsVisible="False"
+      FontSize="36"
+      WidthRequest="350"
+      HorizontalOptions="Center"
+      HorizontalTextAlignment="End" />
+
+		<Frame
+      BackgroundColor="{DynamicResource ToolsBackground}"
+      BorderColor="Transparent"
+      WidthRequest="400" HeightRequest="570"
+			Padding="18,0,18,0">
+
+			<Grid WidthRequest="400">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+
+
+				<!-- Row 0 -->
+				<Button Text="AC" TextColor="#51B9AB" Grid.Row="0" Grid.Column="0" />
+				<Button Text="+/-" TextColor="#51B9AB" Grid.Row="0" Grid.Column="1" />
+				<Button Text="%" TextColor="#51B9AB" Grid.Row="0" Grid.Column="2" />
+				<Button Text="÷" TextColor="#C46D71" Grid.Row="0" Grid.Column="3" />
+
+				<!-- Row 1 -->
+				<Button Text="7" Grid.Row="1" Grid.Column="0" />
+				<Button Text="8" Grid.Row="1" Grid.Column="1" />
+				<Button Text="9" Grid.Row="1" Grid.Column="2" />
+				<Button Text="×" TextColor="#C46D71" Grid.Row="1" Grid.Column="3" />
+
+				<!-- Row 2 -->
+				<Button Text="4" Grid.Row="2" Grid.Column="0" />
+				<Button Text="5" Grid.Row="2" Grid.Column="1" />
+				<Button Text="6" Grid.Row="2" Grid.Column="2" />
+				<Button Text="-" TextColor="#C46D71" Grid.Row="2" Grid.Column="3" />
+
+				<!-- Row 3 -->
+				<Button Text="1" Grid.Row="3" Grid.Column="0" />
+				<Button Text="2" Grid.Row="3" Grid.Column="1" />
+				<Button Text="3" Grid.Row="3" Grid.Column="2" />
+				<Button Text="+" TextColor="#C46D71" Grid.Row="3" Grid.Column="3" />
+
+				<!-- Row 4 -->
+				<Button Grid.Row="4" Grid.Column="0">
+
+					<Button.ImageSource>
+						<FontImageSource
+							x:Name="sunnyIcon"
+							FontFamily="Ionicons"
+							Glyph="{Static helpers:Ionicons.MdRefresh}"
+							Color="{DynamicResource Foreground}"
+							Size="16" />
+					</Button.ImageSource>
+				</Button>
+				<Button Text="0" Grid.Row="4" Grid.Column="1" />
+				<Button Text="." Grid.Row="4" Grid.Column="2" />
+				<Button Text="=" TextColor="#C46D71" Grid.Row="4" Grid.Column="3" />
+			</Grid>
+		</Frame>
+	</VerticalStackLayout>
 </ContentView>
